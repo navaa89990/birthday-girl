@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Cinta 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MUSIC -->
+<audio id="bg-music" loop preload="auto">
+  <source src="filelagu.mp3">
+</audio>
+<button id="music-btn" onclick="toggleMusic()">♪ Play Musik</button>
+
+<!-- CONFETTI CANVAS -->
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ============================================================
+     SLIDES
+============================================================ -->
+
+<!-- SLIDE 1: COVER -->
+<div class="slide active" id="slide-1">
+  <svg class="floral-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <!-- corner florals -->
+    <g opacity="0.18">
+      <!-- top left cluster -->
+      <circle cx="60" cy="55" r="22" fill="#e8a0b0"/>
+      <circle cx="90" cy="35" r="15" fill="#c9a96e"/>
+      <circle cx="35" cy="80" r="12" fill="#e8a0b0"/>
+      <circle cx="110" cy="60" r="10" fill="#f5d0da"/>
+      <!-- petals top left -->
+      <ellipse cx="65" cy="30" rx="10" ry="18" fill="#e8a0b0" transform="rotate(-30 65 30)"/>
+      <ellipse cx="40" cy="50" rx="8" ry="16" fill="#f5d0da" transform="rotate(20 40 50)"/>
+      <ellipse cx="85" cy="20" rx="9" ry="17" fill="#c9a96e" transform="rotate(-60 85 20)" opacity="0.6"/>
+    </g>
+    <g opacity="0.18">
+      <!-- top right cluster -->
+      <circle cx="730" cy="55" r="22" fill="#e8a0b0"/>
+      <circle cx="755" cy="30" r="16" fill="#c9a96e"/>
+      <circle cx="705" cy="75" r="13" fill="#f5d0da"/>
+      <ellipse cx="760" cy="70" rx="10" ry="18" fill="#e8a0b0" transform="rotate(30 760 70)"/>
+      <ellipse cx="720" cy="30" rx="8" ry="16" fill="#f5d0da" transform="rotate(-20 720 30)"/>
+    </g>
+    <g opacity="0.18">
+      <!-- bottom left -->
+      <circle cx="55" cy="530" r="20" fill="#e8a0b0"/>
+      <circle cx="85" cy="555" r="14" fill="#c9a96e"/>
+      <ellipse cx="40" cy="555" rx="9" ry="17" fill="#f5d0da" transform="rotate(10 40 555)"/>
+    </g>
+    <g opacity="0.18">
+      <!-- bottom right -->
+      <circle cx="740" cy="535" r="20" fill="#e8a0b0"/>
+      <circle cx="715" cy="558" r="14" fill="#c9a96e"/>
+      <ellipse cx="758" cy="560" rx="9" ry="17" fill="#f5d0da" transform="rotate(-15 758 560)"/>
+    </g>
+    <!-- small scattered blooms -->
+    <g opacity="0.10">
+      <circle cx="200" cy="80" r="14" fill="#e8a0b0"/>
+      <circle cx="580" cy="90" r="11" fill="#c9a96e"/>
+      <circle cx="150" cy="480" r="12" fill="#e8a0b0"/>
+      <circle cx="650" cy="500" r="13" fill="#c9a96e"/>
+      <circle cx="400" cy="30" r="8" fill="#e8a0b0"/>
+    </g>
+    <!-- vine lines -->
+    <g opacity="0.08" stroke="#c2687a" stroke-width="1.5" fill="none">
+      <path d="M0,200 Q80,180 100,120 Q120,60 180,40"/>
+      <path d="M800,200 Q720,180 700,120 Q680,60 620,40"/>
+      <path d="M0,400 Q80,420 100,480 Q120,540 180,560"/>
+      <path d="M800,400 Q720,420 700,480 Q680,540 620,560"/>
+    </g>
+  </svg>
+  <div class="slide-content">
+    <div class="cover-subtitle">selamat ulang tahun</div>
+    <div class="cover-name">My Love</div>
+    <div class="cover-divider"><span></span><i>✦</i><span></span></div>
+    <div class="cover-tagline">"selamat ulang tahun, cinta."</div>
+    <div class="cover-date">27 Maret</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: Doa Untukmu -->
+<div class="slide" id="slide-2">
+  <svg class="floral-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.12"><circle cx="50" cy="50" r="25" fill="#e8a0b0"/><circle cx="750" cy="550" r="20" fill="#c9a96e"/><circle cx="760" cy="50" r="18" fill="#f5d0da"/><circle cx="40" cy="550" r="22" fill="#e8a0b0"/></g>
+    <g opacity="0.08" stroke="#c9a96e" stroke-width="1" fill="none"><ellipse cx="400" cy="20" rx="300" ry="18"/><ellipse cx="400" cy="580" rx="300" ry="18"/></g>
+  </svg>
+  <div class="slide-content">
+    <div class="slide-label">✦ untuk kamu ✦</div>
+    <div class="slide-title">Doa Untukmu</div>
+    <div class="slide-body">
+      semoga di umur kamu yang baru,<br>
+      kamu lebih <em>bahagia</em>, lebih <em>tenang</em>,<br>
+      dan lebih yakin dengan setiap langkah yang kamu pilih.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="slide-3">
+  <svg class="floral-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.12"><circle cx="80" cy="300" r="30" fill="#e8a0b0"/><circle cx="720" cy="300" r="25" fill="#c9a96e"/></g>
+  </svg>
+  <div class="slide-content">
+    <div class="slide-label">✦ harapanku ✦</div>
+    <div class="slide-body">
+      semoga mimpi-mimpi kamu<br>
+      pelan pelan jadi nyata.<br><br>
+      <em>satu per satu</em><br>
+      tanpa terburu buru.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide" id="slide-4">
+  <svg class="floral-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.12"><circle cx="100" cy="100" r="20" fill="#f5d0da"/><circle cx="700" cy="500" r="28" fill="#e8a0b0"/><circle cx="720" cy="100" r="16" fill="#c9a96e"/></g>
+  </svg>
+  <div class="slide-content">
+    <div class="slide-body">
+      semoga hati kamu<br>
+      tetap <em>lembut</em><br><br>
+      meskipun dunia<br>
+      tidak selalu mudah.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide" id="slide-5">
+  <svg class="floral-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.12"><circle cx="400" cy="30" r="18" fill="#e8a0b0"/><circle cx="400" cy="570" r="18" fill="#c9a96e"/></g>
+  </svg>
+  <div class="slide-content">
+    <div class="slide-label">✦ selalu percaya ✦</div>
+    <div class="slide-body">
+      aku harap tahun ini<br>
+      membawa kamu ke<br>
+      <em>versi yang terbaik</em><br>
+      dari dirimu.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide" id="slide-6">
+  <svg class="floral-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.12"><circle cx="60" cy="300" r="22" fill="#e8a0b0"/><circle cx="740" cy="300" r="18" fill="#f5d0da"/></g>
+  </svg>
+  <div class="slide-content">
+    <div class="slide-body">
+      apapun yang terjadi nanti<br><br>
+      aku selalu mendoakan<br>
+      yang <em>paling baik</em><br>
+      untuk kamu.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide" id="slide-7">
+  <svg class="floral-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.12"><circle cx="100" cy="80" r="24" fill="#e8a0b0"/><circle cx="700" cy="520" r="20" fill="#c9a96e"/><circle cx="700" cy="80" r="17" fill="#f5d0da"/><circle cx="100" cy="520" r="19" fill="#e8a0b0"/></g>
+  </svg>
+  <div class="slide-content">
+    <div class="slide-label">✦ terima kasih ✦</div>
+    <div class="slide-body">
+      terima kasih sudah <em>lahir</em><br><br>
+      dan terima kasih sudah<br>
+      <em>hadir</em> di hidupku.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: PHOTO -->
+<div class="slide" id="slide-8">
+  
+  <div class="slide-content">
+    <div class="photo-frame" id="photo-frame">
+      <div class="photo-placeholder">
+        🌸<br><br>
+        <img src="fotobulet.png" alt="foto kita">
+      </div>
+    </div>
+    <div class="slide-body">
+      mungkin aku nggak selalu ada<br>
+      di setiap langkah kamu.<br><br>
+      tapi aku selalu mendoakan<br>
+      <em>yang terbaik</em> untuk kamu.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9: FINAL -->
+<div class="slide" id="slide-9">
+  <svg class="floral-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.2">
+      <circle cx="60" cy="60" r="26" fill="#e8a0b0"/>
+      <circle cx="95" cy="38" r="17" fill="#c9a96e"/>
+      <circle cx="35" cy="90" r="13" fill="#f5d0da"/>
+      <ellipse cx="68" cy="28" rx="11" ry="20" fill="#e8a0b0" transform="rotate(-30 68 28)"/>
+      <ellipse cx="38" cy="52" rx="9" ry="17" fill="#f5d0da" transform="rotate(20 38 52)"/>
+
+      <circle cx="740" cy="60" r="26" fill="#e8a0b0"/>
+      <circle cx="760" cy="88" r="17" fill="#c9a96e"/>
+      <ellipse cx="755" cy="35" rx="11" ry="20" fill="#f5d0da" transform="rotate(25 755 35)"/>
+
+      <circle cx="60" cy="540" r="22" fill="#e8a0b0"/>
+      <circle cx="88" cy="562" r="14" fill="#c9a96e"/>
+      <ellipse cx="42" cy="560" rx="9" ry="17" fill="#f5d0da" transform="rotate(10 42 560)"/>
+
+      <circle cx="740" cy="540" r="22" fill="#e8a0b0"/>
+      <circle cx="715" cy="563" r="14" fill="#c9a96e"/>
+      <ellipse cx="758" cy="562" rx="9" ry="17" fill="#f5d0da" transform="rotate(-15 758 562)"/>
+
+      <circle cx="400" cy="25" r="12" fill="#e8a0b0"/>
+      <circle cx="400" cy="575" r="12" fill="#c9a96e"/>
+    </g>
+    <g opacity="0.07" stroke="#c2687a" stroke-width="1.5" fill="none">
+      <path d="M0,150 Q100,130 120,70 Q140,10 220,0"/>
+      <path d="M800,150 Q700,130 680,70 Q660,10 580,0"/>
+    </g>
+  </svg>
+  <div class="slide-content">
+    <div class="final-message">
+      hari ini tentang kamu<br>
+      dan semua hal baik yang layak kamu dapatkan.<br><br>
+      semoga langkah kamu selalu ringan.<br>
+      dan hatimu selalu pulang<br>
+      pada hal-hal yang baik.
+    </div>
+    <div class="sender-name">From: El Cakef</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div id="nav">
+  <button class="nav-btn" id="prev-btn" onclick="changeSlide(-1)" disabled>‹</button>
+  <div id="dots"></div>
+  <button class="nav-btn" id="next-btn" onclick="changeSlide(1)">›</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

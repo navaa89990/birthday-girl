@@ -1,0 +1,262 @@
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink-deep: #c2687a;
+    --pink-mid: #e8a0b0;
+    --pink-light: #f5d0da;
+    --pink-pale: #fdf0f3;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --cream: #fef8f0;
+    --text-dark: #5a2d3a;
+    --text-mid: #8b4a58;
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: var(--pink-pale);
+    font-family: 'Dancing Script', serif;
+    cursor: default;
+  }
+
+  /* ========== MUSIC BUTTON ========== */
+  #music-btn {
+    position: fixed; top: 18px; right: 20px; z-index: 999;
+    background: rgba(255,255,255,0.7);
+    border: 1.5px solid var(--gold);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s;
+  }
+  #music-btn:hover { background: rgba(255,255,255,0.9); }
+
+  /* ========== SLIDES ========== */
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.9s ease;
+    padding: 40px 24px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .slide.active { opacity: 1; pointer-events: all; }
+
+  /* ========== FLORAL BG SVG ========== */
+  .floral-bg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .slide-content {
+    position: relative; z-index: 2;
+    max-width: 580px;
+    width: 100%;
+  }
+
+  /* ========== SLIDE 1 - COVER ========== */
+  #slide-1 { background: linear-gradient(160deg, #fce8ef 0%, #fdf3f0 50%, #fce4eb 100%); }
+
+  .cover-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeUp 1s 0.3s both;
+  }
+  .cover-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(72px, 16vw, 110px);
+    color: var(--pink-deep);
+    line-height: 1;
+    margin-bottom: 16px;
+    animation: fadeUp 1s 0.5s both;
+    text-shadow: 2px 4px 20px rgba(194,104,122,0.2);
+  }
+  .cover-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(15px, 3.5vw, 20px);
+    color: var(--text-mid);
+    font-style: italic;
+    animation: fadeUp 1s 0.7s both;
+  }
+  .cover-date {
+    margin-top: 28px;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    animation: fadeUp 1s 0.9s both;
+  }
+  .cover-divider {
+    display: flex; align-items: center; gap: 12px;
+    margin: 20px auto;
+    width: 200px;
+    animation: fadeUp 1s 0.8s both;
+  }
+  .cover-divider span { flex: 1; height: 1px; background: var(--gold-light); }
+  .cover-divider i { color: var(--gold); font-size: 14px; }
+
+  /* ========== GENERAL SLIDE BODY ========== */
+  .slide-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 6vw, 38px);
+    color: var(--pink-deep);
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+  .slide-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(17px, 4vw, 22px);
+    color: var(--text-dark);
+    line-height: 1.9;
+    font-weight: 300;
+  }
+  .slide-body em {
+    font-style: italic;
+    color: var(--pink-deep);
+  }
+
+  /* ========== SLIDE WITH PHOTO ========== */
+  #slide-8 .photo-frame {
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--gold-light);
+    box-shadow: 0 8px 40px rgba(194,104,122,0.2);
+    margin: 0 auto 28px;
+    background: var(--pink-light);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  #slide-8 .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover;
+    transform: scale(1.2);
+  }
+
+  #slide-8 .photo-placeholder {
+    color: var(--pink-mid);
+    font-size: 14px;
+    font-style: italic;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  /* ========== LAST SLIDE ========== */
+  #slide-9 { background: linear-gradient(160deg, #fce4eb 0%, #fdf3f0 60%, #fce8ef 100%); }
+  .final-message {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 4vw, 21px);
+    color: var(--text-dark);
+    line-height: 2;
+    font-weight: 300;
+    font-style: italic;
+  }
+  .sender-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(20px, 9vw, 40px);
+    color: var(--pink-deep);
+    margin-top: 30px;
+  }
+  .heart-row {
+    display: flex; gap: 6px; justify-content: center;
+    margin-top: 16px;
+    font-size: 18px;
+  }
+
+  /* ========== NAVIGATION ========== */
+  #nav {
+    position: fixed; bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; align-items: center; gap: 14px;
+    z-index: 900;
+  }
+  .nav-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(10px);
+    color: var(--text-dark);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-btn:hover { background: white; box-shadow: 0 4px 16px rgba(194,104,122,0.2); }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  #dots { display: flex; gap: 7px; align-items: center; }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--pink-light);
+    border: 1px solid var(--gold);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .dot.active { background: var(--gold); transform: scale(1.4); }
+
+  /* ========== CONFETTI ========== */
+  #confetti-canvas {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 800;
+  }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  .slide.active .slide-label  { animation: fadeUp 0.8s 0.1s both; }
+  .slide.active .slide-title  { animation: fadeUp 0.8s 0.25s both; }
+  .slide.active .slide-body   { animation: fadeUp 0.8s 0.4s both; }
+  .slide.active .photo-frame  { animation: fadeIn 0.9s 0.2s both; }
+  .slide.active .final-message{ animation: fadeUp 0.8s 0.2s both; }
+  .slide.active .sender-name  { animation: fadeUp 0.8s 0.5s both; }
+  .slide.active .heart-row    { animation: fadeUp 0.8s 0.7s both; }
+
+  /* ========== PETAL ANIMATIONS ========== */
+  .petal {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    animation: petalFall linear infinite;
+  }
+  @keyframes petalFall {
+    0%   { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+    10%  { opacity: 0.7; }
+    90%  { opacity: 0.4; }
+    100% { opacity: 0; transform: translateY(110vh) rotate(540deg); }
+  }
+
+  /* common slide backgrounds */
+  #slide-2, #slide-3, #slide-4, #slide-5, #slide-6, #slide-7, #slide-8 {
+    background: linear-gradient(150deg, #fdf0f3 0%, #fff8fa 50%, #fce8ef 100%);
+  }
